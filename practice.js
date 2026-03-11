@@ -25,14 +25,21 @@ console.log(d);
 d['name'] = "loka";
 console.log(d);
 
-//todo Q5 - Write a Js program to create a word - meaning dictionary of 5 words.
-const dict = {
-    appreciate: 'value',
-    lexically: 'position based dictionary',
-    kernel: 'aplication between hardware layer and shell(CLI)',
-    lemon: 'citrus yellow fruit',
-    ear: 'part of the body'
+//todo Q5 - Create a function multiplyNumeric(obj) that multiplies all numeric property values of obj by 2.
+let menu = {
+    width: 200,
+    height: 300,
+    title: "My menu"
 };
+
+function mutliplyNumeric(obj){
+    for(let k in obj){
+        if (typeof obj[k] == 'number'){
+            obj[k] *= 2;
+        }
+    }
+}
+console.log(" After change 'the menu' : ",mutliplyNumeric(menu));
 
 //todo Q6 - What will be the output of the following?
 a = 12;
@@ -42,6 +49,7 @@ console.log("--a", --a);
 console.log("a--", a--);
 console.log("a", a);
 console.log("a--", a--);
+
 
 //todo Q7 - Write a code to calculate the BMI
 function bmi(weight, height) {
@@ -86,17 +94,17 @@ const dCount = Counter(); //1
 function double(val) {
     return (val * 2)
 }
-console.log("Doubled Value: ",double(10));
-console.log("Doubled Value: ",double(1));
-console.log("Doubled Value: ",double(100));
+console.log("Doubled Value: ", double(10));
+console.log("Doubled Value: ", double(1));
+console.log("Doubled Value: ", double(100));
 
 //todo Q11 - Write a function toBoolean(value) that returns true or false without using Boolean() directly.
- function toBoolean(value){
+function toBoolean(value) {
     return !!value;
- }
- console.log("The value: ",toBoolean(0))
- console.log("The value: ",toBoolean(1))
- console.log("The value: ",toBoolean(true))
+}
+console.log("The value: ", toBoolean(0))
+console.log("The value: ", toBoolean(1))
+console.log("The value: ", toBoolean(true))
 
 //todo Q12 - Given a1 = "5" and a2 = 2, show all results of +, -, *, /, ==, === and explain each.
 let a1 = "5";
@@ -105,14 +113,14 @@ console.log("The value of 'a1 + a2': ", a1 + a2); //concatenation
 console.log("The value of 'a1 - a2': ", a1 - a2); //coercion '5'
 console.log("The value of 'a1 * a2': ", a1 * a2); //coercion
 console.log("The value of 'a1 / a2': ", a1 / a2); //coercion
-console.log("The value of 'a1 == a2': ", a1 ==  a2);
+console.log("The value of 'a1 == a2': ", a1 == a2);
 console.log("The value of 'a1 === a2': ", a1 === a2);
 
 //todo Q13 - Write isEmptyString(str) that returns true when str is null, undefined, empty, or only spaces.
 function isEmptyString(str) {
-  if (str === null) return true;          // null or undefined
-  if (typeof str !== "string") return false;
-  return str.trim() === "";
+    if (str === null) return true;          // null or undefined
+    if (typeof str !== "string") return false;
+    return str.trim() === "";
 }
 console.log(isEmptyString());
 console.log(isEmptyString(""));
@@ -120,13 +128,13 @@ console.log(isEmptyString("lalal"));
 console.log(isEmptyString(0));
 
 //todo Q14 - Implement safeDivide(a, b) that returns "Infinity" string when division by zero happens.
-function safeDivide(a,b){
-    if( b === 0 ) return "Infinity";
+function safeDivide(a, b) {
+    if (b === 0) return "Infinity";
     return a / b;
 }
-console.log("The value of '10/2': ",safeDivide(10,2));
-console.log("The value of '10/3': ",safeDivide(10,3));
-console.log("The value of '10/0': ",safeDivide(10,0));
+console.log("The value of '10/2': ", safeDivide(10, 2));
+console.log("The value of '10/3': ", safeDivide(10, 3));
+console.log("The value of '10/0': ", safeDivide(10, 0));
 
 //todo Q15 - Write a snippet that demonstrates the difference between var, let, and const inside a block.
 function safeLog(label, fn) {
@@ -148,44 +156,44 @@ safeLog("v2:", () => v2);
 safeLog("v3:", () => v3);
 
 //todo Q16 - Implement a small script that logs whether a value is primitive or reference.
-function isPrimitive(value){
+function isPrimitive(value) {
     return value !== Object(value)
 }
-console.log(isPrimitive(10));       
-console.log(isPrimitive("hello"));   
-console.log(isPrimitive(null));     
-console.log(isPrimitive({}));        
-console.log(isPrimitive([]));  
+console.log(isPrimitive(10));
+console.log(isPrimitive("hello"));
+console.log(isPrimitive(null));
+console.log(isPrimitive({}));
+console.log(isPrimitive([]));
 
 //todo Q17 - Given value, log its type in a more precise way than typeof, including arrays and null
 function getExactType(value) {
-  if (value === null) return "null";
-  if (Array.isArray(value)) return "array";
-  return typeof value;
+    if (value === null) return "null";
+    if (Array.isArray(value)) return "array";
+    return typeof value;
 }
-console.log("TypeOf value - 'null': ",getExactType(null));
-console.log("TypeOf value - '[]': ",getExactType([]));
-console.log("TypeOf value - '{}': ",getExactType({}));
-console.log("TypeOf value - 'hello': ",getExactType('hello'));
-console.log("TypeOf value - '10': ",getExactType(10));
-console.log("TypeOf value - '9n': ",getExactType(9n));
-console.log("TypeOf value - '() => {}': ",getExactType(() => {}));
+console.log("TypeOf value - 'null': ", getExactType(null));
+console.log("TypeOf value - '[]': ", getExactType([]));
+console.log("TypeOf value - '{}': ", getExactType({}));
+console.log("TypeOf value - 'hello': ", getExactType('hello'));
+console.log("TypeOf value - '10': ", getExactType(10));
+console.log("TypeOf value - '9n': ", getExactType(9n));
+console.log("TypeOf value - '() => {}': ", getExactType(() => { }));
 
 //todo Q18 - Implement grading logic using if/else and then convert it to switch.
-function getGrade(val){
-    if(val >= 90) return "Grade A";
-    else if(val >= 70) return "Grade B";
-    else if(val >= 50) return "Grade C";
-    else if(val >= 30) return "Grade D";
+function getGrade(val) {
+    if (val >= 90) return "Grade A";
+    else if (val >= 70) return "Grade B";
+    else if (val >= 50) return "Grade C";
+    else if (val >= 30) return "Grade D";
     else return "Grade F";
 }
-console.log("The grade: ",getGrade(87));
-console.log("The grade: ",getGrade(7));
-console.log("The grade: ",getGrade(90));
+console.log("The grade: ", getGrade(87));
+console.log("The grade: ", getGrade(7));
+console.log("The grade: ", getGrade(90));
 
 //convert the above situation into switch case 
-function getGradeSwitch(val){
-    switch(true){
+function getGradeSwitch(val) {
+    switch (true) {
         case val >= 90:
             return "Grade A";
         case val >= 70:
@@ -198,18 +206,18 @@ function getGradeSwitch(val){
             return "Grade F"
     }
 }
-console.log("The grade: ",getGradeSwitch(92));
-console.log("The grade: ",getGradeSwitch(30));
-console.log("The grade: ",getGradeSwitch(9));
+console.log("The grade: ", getGradeSwitch(92));
+console.log("The grade: ", getGradeSwitch(30));
+console.log("The grade: ", getGradeSwitch(9));
 
 //todo Q19 - Write a function maxOfThree(a,b,c) using nested ternary operators.
-function maxOfThree(a,b,c){
+function maxOfThree(a, b, c) {
     return a > b
-    ? (a > c ? a : c)
-    : (b > c ? b : c)
+        ? (a > c ? a : c)
+        : (b > c ? b : c)
 }
-console.log("Maximum Value: ",maxOfThree(23,89,90));
-console.log("Maximum Value: ",maxOfThree(123,99,9));
+console.log("Maximum Value: ", maxOfThree(23, 89, 90));
+console.log("Maximum Value: ", maxOfThree(123, 99, 9));
 
 //todo Q20 - Given an object config, return a default value when config.port is null or undefined using ??
 function getPort(config) {
@@ -230,11 +238,45 @@ console.log("The port number is:", getPort({}));
 
 //todo Q22 - Given user object that might be null, safely get user.address.city without throwing (with optional chaining).
 function getCity(user) {
-  return user?.address?.city;
+    return user?.address?.city;
 }
-console.log("The city:",getCity(null)); 
-console.log("The city: ",getCity({ address: { city: "Delhi" } })); 
-// console.log(dict);
+console.log("The city:", getCity(null));
+console.log("The city: ", getCity({ address: { city: "Delhi" } }));
+
+//todo Q23  Write the code to sum all salaries and store in the variable sum.
+let salaries = {
+  a: 200,
+  b: 400,
+  c: 500, //**last comma ',' is called trailing/hanging comma, Makes it easier to add/remove/move around properties, because all lines become alike. 
+}
+let sum = 0;
+for(let k in salaries){
+  // console.log(k); //property name "a", "b", ....
+  // console.log(salries[k]); //value of the property
+  sum = sum + salaries[k]
+}
+console.log(sum)
+
+//todo Q24 Write the function isEmpty(obj) which returns true if the object has no properties, false otherwise.
+const ob = {};
+function isEmpty(obj) {
+  for (let k in obj) {
+    return false;
+  }
+  return true;
+}
+console.log("Is Object empty or not: ", isEmpty(ob));
+
+//todo Q25 - Write a Js program to create a word - meaning dictionary of 5 words.
+const dict = {
+    appreciate: 'value',
+    lexically: 'position based dictionary',
+    kernel: 'aplication between hardware layer and shell(CLI)',
+    lemon: 'citrus yellow fruit',
+    ear: 'part of the body'
+};
+
+console.log(dict);
 // // Q6 - Use logical operators to find whether the age of person lies between 10 and 20 ?
 // // install command: npm install prompt-sync
 // const prompt = require("prompt-sync")({sigint:true});
